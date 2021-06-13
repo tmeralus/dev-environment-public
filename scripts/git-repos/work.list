@@ -1,0 +1,3 @@
+ansible-role-rhel7-stig
+ansible-role-rhel8-stig
+rhel-stig-v3r1-check

@@ -1,0 +1,4 @@
+- import_tasks: "_user.yml"
+- import_tasks: "_git_setup.yml"
+- import_tasks: "_git_dirs.yml"
+#- import_tasks: "_git_repos.yml"

@@ -1,0 +1,12 @@
+---
+- hosts: localhost
+  connection: local
+  become: yes
+  tasks:
+  - name: Include OS-specific variables.
+    include_vars: "{{ playbook_dir }}/defaults/main.yml"
+  - import_tasks: "tasks/main.yml"
+#    become_user: "{{ user_name }}"
+
+  - debug:
+      msg: "PLAYBOOK COMPLETED"

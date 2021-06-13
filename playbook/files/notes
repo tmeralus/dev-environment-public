@@ -1,0 +1,45 @@
+Github roels to genereate new keys 
+https://community.ibm.com/community/user/ibmz-and-linuxone/blogs/asif-mahmud1/2020/03/15/cloning-private-git-repository-using-ansible
+
+Example playbook for cloning a private git repository with Ansible.
+https://gist.github.com/devynspencer/effa29af449c46477ac71213210e7043
+
+Chapter 1. Introducing Red Hat CodeReady Containers
+https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.18/html/getting_started_guide/introducing-codeready-containers_gsg#about-codeready-containers_gsg
+
+Chapter 2. Minimum system requirements
+https://access.redhat.com/documentation/en-us/red_hat_codeready_containers/1.18/html/release_notes_and_known_issues/minimum-system-requirements_rn-ki#minimum-system-requirements-hardware_rn-ki
+
+Red Hat OpenShift 4 on your laptop: Introducing Red Hat CodeReady Containers
+https://developers.redhat.com/blog/2019/09/05/red-hat-openshift-4-on-your-laptop-introducing-red-hat-codeready-containers/
+
+
+# Install anible via pip and use globally
+# set ansible.cfg 
+# FIX PIP INSTALL ANSIBLE changes 
+#ansible-playbook -l localhost /home/$USER_NAME/github/ansible/roles/ansible-role-openshift-setup/playbook.yml
+
+# run git checker 
+# run into github folder
+# for loop if .git folder is found
+# run git pull to get latest pulls 
+
+# create backup script 
+#check for backup name
+# if found, start rsync backup 
+# check for /home/tmeralus/tmp/
+# send backup notification to tmp dir 
+
+
+
+# setup githup repo dirs with loop
+#- name: Create github dirs
+#  file:
+#    src: '{{ item.src }}'
+#    dest: '{{ item.dest }}'
+#    state: directory
+#  loop:
+#    - { src: x, dest: y }
+#    - { src: z, dest: k }
+#   sudo_user: "{{ user_name }}"
+

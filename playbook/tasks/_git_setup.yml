@@ -1,0 +1,43 @@
+- name: Check if SSH key is already present
+  stat:
+    path: "{{ key_path }}"
+  register: key_stat_result
+
+- name: Generate SSH key for accessing GitHub
+  command: "ssh-keygen -t rsa -f {{ key_path }} -N ''"
+  when: not key_stat_result.stat.exists
+
+- name: Get key content
+  command: "cat {{ key_path }}"
+  register: key_content
+
+- name: Check if known_host exists
+  stat:
+    path: "{{ known_hosts_path }}"
+  register: known_hosts_stat
+
+- name: Create known_hosts if it doesn't exist
+  file:
+    path: "{{ known_hosts_path }}"
+    state: touch
+  when: not known_hosts_stat.stat.exists
+
+- name: Get the content of known hosts
+  shell: "cat {{ known_hosts_path }} | grep github.com"
+  register: host_stat
+  failed_when: host_stat.rc > 1
+
+- name: Add SSH public key to GitHub account
+  uri:
+    url: https://api.github.com/user/keys
+    validate_certs: no
+    method: POST
+    body:
+      title: "{{ key_title }}"
+      key: "{{ key_content.stdout }}"
+    body_format: json
+    headers:
+      Content-Type: "application/json"
+      Authorization: "token {{ gh_token }}"
+  register: task_log
+  failed_when: task_log.content.find('key is already in use') == 0

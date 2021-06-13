@@ -1,0 +1,13 @@
+ansible-role-awx-tower
+ansible-role-docker-jenkins
+ansible-role-docker-playground
+ansible-role-elk-stack
+ansible-role-jenkins-standalone
+ansible-role-memcache
+ansible-role-nagios-docker
+ansible-role-openssl-certgen
+ansible-role-redis-sentinel-HA
+ansible-role-rhel-to-centos
+ansible-role-template
+ansible-role-tick-stack
+openshift-ansible

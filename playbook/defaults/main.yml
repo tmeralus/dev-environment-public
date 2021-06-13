@@ -1,0 +1,133 @@
+---
+user_name: "tmeralus"
+git_user: "tmeralus"
+git_email: "example@gmail.com"
+git_pubkey: "/home/{{ user_name }}/.ssh/id_rsa"
+# dir for some of your favorite wallpaper
+photos_dir: "/home/{{ user_name }}/Pictures/"
+visual_studio_code_package: "code"
+visual_studio_code_mirror: 'https://packages.microsoft.com'
+key_title: x1carbon #name of key to be added to github.com
+key_path: "/home/{{ user_name }}/.ssh/id_rsa"
+known_hosts_path: "/home/{{ user_name }}/.ssh/known_hosts"
+# Must create github personal access token
+# with the following permission admin:gpg_key, admin:public_key, repo, user
+gh_token: "easypulls"
+gh_file: "{{ playbook_dir }}/files/mytoken.txt"
+gh_editor: "nano" # set to vim or nano
+gh_protocol: "ssh" # set to http or ssh
+# github directories for organizing repos
+git_dir: "/home/{{ user_name }}/github"
+git_ansible_dir: "{{ git_dir }}/ansible/roles"
+git_1019_dir: "{{ git_dir }}/1019studios"
+git_code_dir: "{{ git_dir }}/code"
+git_dnd_dir: "{{ git_dir }}/dnd-podcast"
+git_docker_dir: "{{ git_dir }}/docker"
+git_game_dir: "{{ git_dir }}/game"
+git_school_dir: "{{ git_dir }}/school"
+git_web_dir: "{{ git_dir }}/web"
+git_test_dir: "{{ git_dir }}/test"
+
+# Github repos to pull
+git_docker_data_repo: https://github.com/tmeralus/docker_data.git
+git_school_repos: https://github.com/tmeralus/school-projects.git
+
+git_code_repos:
+    - https://github.com/tmeralus/VB-TechToolkit.git
+    - https://github.com/tmeralus/tap-toolbox.git
+    - https://github.com/tmeralus/steam-controller-setup.git
+
+git_1019_repos:
+    - https://github.com/1019studios/studio-logo-assets.git
+    - https://github.com/1019studios/haitian-flag-assets.git
+    - https://github.com/1019studios/big-zoes-podcast-logo-ideas.git
+    - https://github.com/1019studios/apparel.git
+    - https://github.com/1019studios/studio-resources.git
+
+git_game_repos:
+    - https://github.com/tmeralus/kernel-panicK-game.git
+    - https://github.com/tmeralus/tux-titans-game.git
+    - https://github.com/tmeralus/tux-fighters-game.git
+    - https://github.com/tmeralus/tale-of-tux-game.git
+
+git_web_repos:
+    - https://github.com/tmeralus/tmeralus.github.io.git
+
+git_ansible_repos:
+    - https://github.com/tmeralus/ansible-role-jenkins-standalone.git
+    - https://github.com/tmeralus/ansible-role-docker-jenkins.git
+    - https://github.com/tmeralus/ansible-role-docker-playground.git
+    - https://github.com/tmeralus/ansible-role-nagios-docker.git
+    - https://github.com/tmeralus/ansible-role-tick-stack.git
+    - https://github.com/tmeralus/ansible-role-wazuh-docker.git
+    - https://github.com/tmeralus/ansible-role-awx-tower.git
+    - https://github.com/tmeralus/ansible-role-template.git
+    - https://github.com/tmeralus/ansible-role-rhel-to-centos.git
+    - https://github.com/tmeralus/ansible-role-elk-stack.git
+    - https://github.com/tmeralus/ansible-role-openssl-certgen.git
+    - https://github.com/tmeralus/ansible-role-redis-sentinel-HA.git
+    - https://github.com/tmeralus/ansible-role-memcache.git
+
+git_docker_repos:
+    - https://github.com/tmeralus/docker-jenkins-setup.git
+    - https://github.com/tmeralus/docker-jira-compose.git
+    - https://github.com/tmeralus/docker-nagios-setup.git
+    - https://github.com/tmeralus/docker-centos-node.git
+    - https://github.com/tmeralus/docker-ubuntu-node.git
+    - https://github.com/tmeralus/docker-ansible-node.git
+    - https://github.com/tmeralus/reference-ccda-validator.git
+    - https://github.com/tmeralus/docker-jenkins-build-projects.git
+    - https://github.com/tmeralus/docker-tick-stack-grafana.git
+
+git_dnd_repos:
+    - https://github.com/somediceguys/diceguys-bot.git
+    - https://github.com/somediceguys/podcast-scripts.git
+    - https://github.com/somediceguys/gimp-project-files.git
+    - https://github.com/somediceguys/finished-assets.git
+    - https://github.com/somediceguys/intro-clip.git
+    - https://github.com/somediceguys/outro-clip.git
+    - https://github.com/somediceguys/episode-07.git
+    #- https://github.com/somediceguys/episode-08.git
+    #- https://github.com/somediceguys/episode-09.git
+    #- https://github.com/somediceguys/episode-10.git
+
+# Adding Bash aliases
+bash_aliases_path: "/home/{{ user_name }}/.bash_aliases"
+bash_aliases_extra:
+ - "git config --global user.name {{ git_user }} "
+ - "git config --global user.email {{ git_email }} "
+# shortcuts for packages using apt
+apt_bash_aliases:
+ - { alias: 'install', command: 'sudo apt-get install' }
+ - { alias: 'search', command: 'apt-cache search' }
+ - { alias: 'upgrade', command: 'sudo apt-get upgrade -y' }
+ - { alias: 'update', command: 'sudo apt-get update' }
+# shortcuts for packages using yum
+yum_bash_aliases:
+ - { alias: 'install', command: 'sudo yum install -y' }
+ - { alias: 'search', command: 'yum search' }
+ - { alias: 'upgrade', command: 'sudo yum upgrade -y' }
+ - { alias: 'update', command: 'sudo yum update' }
+# system shortcuts independant of pkg manager
+default_bash_aliases:
+ - { alias: 'logs', command: 'journalctl -f' }
+ - { alias: 'end-logs', command: 'journalctl -xe' }
+ - { alias: 'start', command: 'systemctl start' }
+ - { alias: 'stop', command: 'systemctl stop' }
+ - { alias: 'status', command: 'systemctl status' }
+ - { alias: 'restart', command: 'systemctl restart' }
+ - { alias: 'update-bashrc', command: 'source ~/.bashrc' }
+ - { alias: 'campfire', command: 'aafire -driver curses' }
+ - { alias: 'check-moon', command: 'curl wttr.in/Moon' }
+ - { alias: 'check-weather', command: 'curl wttr.in' }
+ - { alias: 'crypto-rates', command: 'curl rate.sx' }
+ - { alias: 'start-matrix', command: 'cmatrix' }
+# - { alias: 'docker-clear', command: 'sudo docker stop $(docker ps -a -q)  && docker rm $(docker ps -a -q) && docker rmi -f $(docker images -a -q)' }
+ - { alias: 'docker-rm', command: 'docker rmi -f $(docker images -a -q)' }
+ - { alias: 'snano', command: 'sudo nano' }
+ - { alias: 'sua', command: 'sudo su ansible' }
+ - { alias: 'tartar', command: 'tar -zxvf' }  
+ - { alias: 'install', command: 'sudo apt-get install' }
+ - { alias: 'search', command: 'apt-cache search' }
+ - { alias: 'upgrade', command: 'sudo apt-get upgrade -y' }
+ - { alias: 'update', command: 'sudo apt-get update' }

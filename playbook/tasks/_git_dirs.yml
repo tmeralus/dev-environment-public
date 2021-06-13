@@ -1,0 +1,18 @@
+---
+# setup githup repo dirs
+- name: Create github dirs
+  file:
+    src: '{{ item }}'
+    dest: '{{ git_dir }}'
+    state: directory
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+  with_items:
+    - "{{ git_1019_dir }}"
+    - "{{ git_code_dir }}"
+    - "{{ git_dnd_dir }}"
+    - "{{ git_docker_dir }}"
+    - "{{ git_game_dir }}"
+    - "{{ git_school_dir }}"
+    - "{{ git_test_dir }}"
+    - "{{ git_web_dir }}"

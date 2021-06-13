@@ -1,0 +1,79 @@
+---
+# Pull docker data private dirs
+- name: git clone private docker data repo
+  command: "git clone {{ git_docker_data_repo }}"
+  args:
+    chdir: "{{ git_dir }}"
+  ignore_errors: yes
+
+# git clone clone ansible repos
+- name: "gh-cli repo clone ansible repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_ansible_dir }}"
+  with_items:
+    - "{{ git_ansible_repos }}"
+  ignore_errors: yes
+
+# git clone clone 1019 repos
+- name: "gh-cli repo clone 1019 studios repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_1019_dir }}"
+  with_items:
+    - "{{ git_1019_repos }}"
+  ignore_errors: yes
+
+# git clone clone code repos
+- name: "gh-cli repo clone code repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_code_dir }}"
+  with_items:
+    - "{{ git_code_repos }}"
+  ignore_errors: yes
+
+# git clone clone dnd-podcast repos
+- name: "gh-cli repo clone dnd-podcast repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_dnd_dir }}"
+  with_items:
+    - "{{ git_dnd_repos }}"
+  ignore_errors: yes
+
+# git clone clone docker repos
+- name: "gh-cli repo clone docker repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_docker_dir }}"
+  with_items:
+    - "{{ git_docker_repos }}"
+  ignore_errors: yes
+
+# git clone clone game repos
+- name: "gh-cli repo clone game repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_game_dir }}"
+  with_items:
+    - "{{ git_game_repos }}"
+  ignore_errors: yes
+
+# git clone clone school repos
+- name: "gh-cli repo clone school repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_school_dir }}"
+  with_items:
+    - "{{ git_school_repos }}"
+  ignore_errors: yes
+
+# git clone clone web repos
+- name: "gh-cli repo clone web repos"
+  shell: "gh repo clone {{ item }}"
+  args:
+    chdir: "{{ git_web_dir }}"
+  with_items:
+    - "{{ git_web_repos }}"
+  ignore_errors: yes

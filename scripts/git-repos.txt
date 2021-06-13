@@ -1,0 +1,56 @@
+https://github.com/tmeralus/ansible-role-memcache.git
+https://github.com/tmeralus/ansible-role-tick-stack.git
+https://github.com/tmeralus/docker-nagios-setup.git
+https://github.com/tmeralus/flask-nba-scraper.git
+https://github.com/tmeralus/ansible-role-nagios-server.git
+https://github.com/tmeralus/ansible-role-redis-sentinel-HA.git
+https://github.com/tmeralus/docker-nagios-setup.git
+https://github.com/tmeralus/tmeralus.github.io.git
+https://github.com/tmeralus/docker-tick-stack-grafana.git
+https://github.com/tmeralus/docker-tmeralus-ubuntu-node.git
+https://github.com/tmeralus/ansible-role-nagios-docker.git
+https://github.com/tmeralus/ansible-role-tick-stack.git
+https://github.com/tmeralus/docker-jenkins-setup.git
+https://github.com/tmeralus/fresh-install-linux.git
+https://github.com/tmeralus/sysadmin-kit.git
+https://github.com/tmeralus/tap-toolbox.git
+https://github.com/tmeralus/python-playground.git
+https://github.com/tmeralus/python-sentinmental-app.git
+
+# git repo'sto pull
+CODE_DIR=/home/$USER/temp/github/code
+ANSIBLE_DIR=/home/$USER/temp/github/ansible/roles
+PRIVATE_DIR=/home/$USER/temp/github/private
+USER='tmeralus'
+
+cd $CODE_DIR
+git clone https://github.com/$USER/ccda-validator-docker.git
+git clone https://github.com/$USER/docker-nagios-setup.git
+git clone https://github.com/$USER/docker-tmeralus-centos7-node.git
+git clone https://github.com/$USER/docker-tick-stack-grafana.git
+cd $ANSIBLE_DIR
+git clone https://github.com/$USER/ansible-role-jenkins-standalone.git
+git clone https://github.com/$USER/ansible-role-docker-jenkins.git
+git clone https://github.com/$USER/ansible-role-nagios-server.git
+git clone https://github.com/$USER/ansible-role-docker-playground.git
+git clone https://github.com/$USER/ansible-role-nagios-docker.git
+git clone https://github.com/$USER/ansible-role-docker-build.git
+git clone https://github.com/$USER/ansible-role-tick-stack.git
+git clone https://github.com/$USER/ansible-role-wazuh-docker.git
+git clone https://github.com/$USER/ansible-role-wazuh-setup.git
+git clone https://github.com/$USER/ansible-role-vagrant-playground.git
+git clone https://github.com/$USER/ansible-role-awx-tower.git
+git clone https://github.com/$USER/ansible-role-template.git
+git clone https://github.com/$USER/ansible-role-mysql-ndb-cluster.git
+git clone https://github.com/$USER/ansible-role-rhel-to-centos.git
+git clone https://github.com/$USER/ansible-role-elk-stack.git
+git clone https://github.com/$USER/ansible-role-openssl.git
+git clone https://github.com/$USER/ansible-role-redis-sentinel-HA.git
+git clone https://github.com/$USER/ansible-role-memcache.git
+
+cd $PRIVATE_DIR
+git clone https://github.com/$USER/dev-environment
+git clone https://github.com/$USER/docker-tmeralus-centos7-node.git
+git clone https://github.com/$USER/docker-tmeralus-ubuntu-node.git
+git clone https://github.com/$USER/twitterstream.git
+git clone https://github.com/$USER/python-playground.git

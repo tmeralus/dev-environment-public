@@ -1,0 +1,40 @@
+- name: "Set authorized key for {{ user_name }}"
+  authorized_key:
+    user: "{{ user_name }}"
+    state: present
+    key: "https://github.com/tmeralus.keys"
+    exclusive: True
+  become: true
+
+- name: "Set permissions for authorized key"
+  file:
+    path: /home/{{ user_name }}/.ssh/authorized_keys
+    owner: "{{ user_name }}"
+    group: "{{ user_name }}"
+    mode: 0600
+
+- name: Add Bash aliases | Add aliases
+  lineinfile:
+    dest: "{{ bash_aliases_path }}"
+    create: yes
+    mode: 0644
+    line: 'alias {{ item.alias }}="{{ item.command }}"'
+    regexp: "^alias {{ item.alias }}="
+  with_items: "{{ default_bash_aliases }}"
+
+- name: Add Bash aliases | git configs
+  lineinfile:
+    dest: "{{ bash_aliases_path }}"
+    create: yes
+    mode: 0644
+    line: "{{ item }}"
+  with_items: "{{ bash_aliases_extra }}"
+
+- name: Add Bash aliases | Add aliases
+  lineinfile:
+    dest: "{{ bash_aliases_path }}"
+    create: yes
+    mode: 0644
+    line: 'alias {{ item.alias }}="{{ item.command }}"'
+    regexp: "^alias {{ item.alias }}="
+  with_items: "{{ apt_bash_aliases }}" 

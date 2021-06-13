@@ -1,0 +1,27 @@
+Windows 10 dev env ova file 
+https://developer.microsoft.com/en-us/windows/downloads/virtual-machines/
+
+This evaluation virtual machine includes:
+
+Windows 10, version 2004 (10.0.19041.0)
+
+Windows 10 SDK, version 2004 (10.0.19041.0)
+
+Visual Studio 2019 (latest as of 1/15/21) with the UWP, .NET desktop, and Azure workflows enabled and also includes the Windows Template Studio extension
+
+Visual Studio Code (latest as of 1/15/21)
+
+Windows Subsystem for Linux enabled with Ubuntu installed
+
+Developer mode enabled
+
+
+File hashes
+Name	Length	FileHash
+WinDev2101Eval.HyperVGen1.zip	19632470471	3D2F5CB79621EEE42FC1B96DCDAFB3D00E5A680E5B9885194435995E6AF07EFF
+WinDev2101Eval.Parallels.zip	20090046988	EB18A87BB66183283A4D3279B934D4D2AA6DD2C6C6545AE3F9C5A24C3A3EA0BA
+WinDev2101Eval.VirtualBox.zip	20122284049	CF458AB7F06D02570FF5C1D8053BD914623E5A4CB68C19DB02D4799F96DBC081
+WinDev2101Eval.VMware.zip	21293369644	4BA6102EAF98AB5AFA5887077BA0AC4C7B4B0A0427B2A5BB7BAD747C2CEFDDEC
+
+
+

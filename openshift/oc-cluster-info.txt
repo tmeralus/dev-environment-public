@@ -1,0 +1,22 @@
+OpenShift server started.
+The server is accessible via web console at:
+     https://127.0.0.1:8443
+You are logged in as:
+     User:     developer
+     Password: <any value>
+To login as administrator:
+     oc login -u system:admin
+
+In project default on server https://127.0.0.1:8443
+
+svc/docker-registry - 172.30.1.1:5000
+  dc/docker-registry deploys docker.io/openshift/origin-docker-registry:v3.11 
+    deployment #1 deployed 9 minutes ago - 1 pod
+
+svc/kubernetes - 172.30.0.1:443 -> 8443
+
+svc/router - 172.30.130.245 ports 80, 443, 1936
+  dc/router deploys docker.io/openshift/origin-haproxy-router:v3.11 
+    deployment #1 deployed 9 minutes ago - 1 pod
+
+View details with 'oc describe <resource>/<name>' or list everything with 'oc get all'.
