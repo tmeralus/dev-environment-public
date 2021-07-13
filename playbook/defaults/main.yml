@@ -37,18 +37,9 @@ git_code_repos:
     - https://github.com/tmeralus/tap-toolbox.git
     - https://github.com/tmeralus/steam-controller-setup.git
 
-git_1019_repos:
-    - https://github.com/1019studios/studio-logo-assets.git
-    - https://github.com/1019studios/haitian-flag-assets.git
-    - https://github.com/1019studios/big-zoes-podcast-logo-ideas.git
-    - https://github.com/1019studios/apparel.git
+git_1019_repos: 
     - https://github.com/1019studios/studio-resources.git
-
-git_game_repos:
-    - https://github.com/tmeralus/kernel-panicK-game.git
-    - https://github.com/tmeralus/tux-titans-game.git
-    - https://github.com/tmeralus/tux-fighters-game.git
-    - https://github.com/tmeralus/tale-of-tux-game.git
+ 
 
 git_web_repos:
     - https://github.com/tmeralus/tmeralus.github.io.git
@@ -78,19 +69,7 @@ git_docker_repos:
     - https://github.com/tmeralus/reference-ccda-validator.git
     - https://github.com/tmeralus/docker-jenkins-build-projects.git
     - https://github.com/tmeralus/docker-tick-stack-grafana.git
-
-git_dnd_repos:
-    - https://github.com/somediceguys/diceguys-bot.git
-    - https://github.com/somediceguys/podcast-scripts.git
-    - https://github.com/somediceguys/gimp-project-files.git
-    - https://github.com/somediceguys/finished-assets.git
-    - https://github.com/somediceguys/intro-clip.git
-    - https://github.com/somediceguys/outro-clip.git
-    - https://github.com/somediceguys/episode-07.git
-    #- https://github.com/somediceguys/episode-08.git
-    #- https://github.com/somediceguys/episode-09.git
-    #- https://github.com/somediceguys/episode-10.git
-
+ 
 # Adding Bash aliases
 bash_aliases_path: "/home/{{ user_name }}/.bash_aliases"
 bash_aliases_extra:
